@@ -74,6 +74,7 @@ describe('capitalize(string)', ()=>{
     expect(()=>capitalize('abc')).not.toThrow(Error);
   });
   it ('should return the first character capitalized', ()=>{
+    expect(capitalize('')).toBe('');
     expect(capitalize('abc')).toBe('Abc');
     expect(capitalize('lost to me')).toBe('Lost to me');
     expect(capitalize('aaaaa')).toBe('Aaaaa');
