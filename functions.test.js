@@ -1,4 +1,4 @@
-import { Calculator, reverseString, stringLength } from './functions';
+import { Calculator, reverseString, stringLength, capitalize } from './functions';
 
 describe('stringLength(string)', ()=>{
   it ('should accept only strings', ()=>{
