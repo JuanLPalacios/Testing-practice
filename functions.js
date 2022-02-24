@@ -33,7 +33,7 @@ export function capitalize(string) {
     if (typeof string !== 'string')
         throw new Error('first parameter should be a a string');
         string = [...string]
-        string[0] = string[0].toUpperCase();
+        string[0] = (string[0]||'').toUpperCase();
         string = string.join('');
     return string;
 }
