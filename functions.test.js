@@ -7,6 +7,7 @@ describe('stringLength(string)', ()=>{
     expect(()=>stringLength(true)).toThrow(Error);
     expect(()=>stringLength(/d/g)).toThrow(Error);
     expect(()=>stringLength([])).toThrow(Error);
+    expect(()=>stringLength('abc')).not.toThrow(Error);
   });
   it ('should return the string length', ()=>{
     expect(stringLength('a')).toBe(1);
@@ -30,6 +31,7 @@ describe('reverseString(string)', ()=>{
     expect(()=>reverseString(true)).toThrow(Error);
     expect(()=>reverseString(/d/g)).toThrow(Error);
     expect(()=>reverseString([])).toThrow(Error);
+    expect(()=>reverseString('abc')).not.toThrow(Error);
   });
   it ('should return the reversed string', ()=>{
     expect(reverseString('abc')).toBe('cba');
@@ -59,6 +61,22 @@ describe('Calculator', ()=>{
     expect(calc.multiply(3,2)).toBe(6);
     expect(calc.multiply(3,3)).toBe(9);
     expect(calc.multiply(5,3)).toBe(15);
+  });
+});
+
+describe('capitalize(string)', ()=>{
+  it ('should accept only strings', ()=>{
+    expect(()=>capitalize({})).toThrow(Error);
+    expect(()=>capitalize(2)).toThrow(Error);
+    expect(()=>capitalize(true)).toThrow(Error);
+    expect(()=>capitalize(/d/g)).toThrow(Error);
+    expect(()=>capitalize([])).toThrow(Error);
+    expect(()=>capitalize('abc')).not.toThrow(Error);
+  });
+  it ('should return the first character capitalized', ()=>{
+    expect(capitalize('abc')).toBe('Abc');
+    expect(capitalize('lost to me')).toBe('Lost to me');
+    expect(capitalize('aaaaa')).toBe('Aaaaa');
   });
 });
 
