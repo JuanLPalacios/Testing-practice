@@ -13,3 +13,18 @@ export function reverseString(string) {
         throw new Error('first parameter should be a a string');
     return string.split('').reverse().join('');
 }
+
+export class Calculator {
+    add(a,b){
+        return a+b;
+    }
+    subtract(b,a){
+        return a-b;
+    }
+    divide(a,b){
+        return a/b;
+    }
+    multiply(a,b){
+        return a*b;
+    }
+}
