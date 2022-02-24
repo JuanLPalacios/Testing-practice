@@ -1,4 +1,4 @@
-import { stringLength } from './functions';
+import { reverseString, stringLength } from './functions';
 
 describe('stringLength(string)', ()=>{
   it ('should accept only strings', ()=>{
@@ -20,6 +20,21 @@ describe('stringLength(string)', ()=>{
     expect(()=>stringLength('dsfgsdfgsdfgsdfgsdfgsdg')).toThrow(Error);
     expect(()=>stringLength('this is too long')).toThrow(Error);
     expect(()=>stringLength('just right')).not.toThrow(Error);
+  });
+});
+
+describe('reverseString(string)', ()=>{
+  it ('should accept only strings', ()=>{
+    expect(()=>reverseString({})).toThrow(Error);
+    expect(()=>reverseString(2)).toThrow(Error);
+    expect(()=>reverseString(true)).toThrow(Error);
+    expect(()=>reverseString(/d/g)).toThrow(Error);
+    expect(()=>reverseString([])).toThrow(Error);
+  });
+  it ('should return the reversed string', ()=>{
+    expect(reverseString('abc')).toBe('cba');
+    expect(reverseString('lost to me')).toBe('em ot tsol');
+    expect(reverseString('aaaaa')).toBe('aaaaa');
   });
 });
 
