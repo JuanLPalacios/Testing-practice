@@ -1,4 +1,4 @@
-import { reverseString, stringLength } from './functions';
+import { Calculator, reverseString, stringLength } from './functions';
 
 describe('stringLength(string)', ()=>{
   it ('should accept only strings', ()=>{
@@ -35,6 +35,30 @@ describe('reverseString(string)', ()=>{
     expect(reverseString('abc')).toBe('cba');
     expect(reverseString('lost to me')).toBe('em ot tsol');
     expect(reverseString('aaaaa')).toBe('aaaaa');
+  });
+});
+
+describe('Calculator', ()=>{
+  const calc = new Calculator();
+  it ('should add', ()=>{
+    expect(calc.add(1,0)).toBe(1);
+    expect(calc.add(1,2)).toBe(3);
+    expect(calc.add(3,2)).toBe(5);
+  });
+  it ('should subtract', ()=>{
+    expect(calc.subtract(2,3)).toBe(1);
+    expect(calc.subtract(5,8)).toBe(3);
+    expect(calc.subtract(5,10)).toBe(5);
+  });
+  it ('should divide', ()=>{
+    expect(calc.divide(2,2)).toBe(1);
+    expect(calc.divide(9,3)).toBe(3);
+    expect(calc.divide(15,3)).toBe(5);
+  });
+  it ('should multiply', ()=>{
+    expect(calc.multiply(3,2)).toBe(6);
+    expect(calc.multiply(3,3)).toBe(9);
+    expect(calc.multiply(5,3)).toBe(15);
   });
 });
 
