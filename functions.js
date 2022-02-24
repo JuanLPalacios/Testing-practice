@@ -7,3 +7,9 @@ export function stringLength(string) {
         throw new Error('string cannot be longer than 10 characters');
     return string.length;
 }
+
+export function reverseString(string) {
+    if (typeof string !== 'string')
+        throw new Error('first parameter should be a a string');
+    return string.split('').reverse().join('');
+}
